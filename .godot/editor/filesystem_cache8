@@ -1,6 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1724768349
+::res://::1725718032
 icon.svg::CompressedTexture2D::6775898557387516117::1723959318::1723959323::1::::<><>::
+::res://addons/::1724768859
+::res://addons/godot-git-plugin/::1724768859
+git_plugin.gdextension::GDExtension::-1::1724768859::0::1::::<><>::
+plugin.cfg::TextFile::-1::1724768859::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1724768859::0::1::::<><>::
+::res://addons/godot-git-plugin/linux/::1724768859
+::res://addons/godot-git-plugin/macos/::1724768859
+::res://addons/godot-git-plugin/win64/::1724768859
 ::res://Assets_PixelAdventure/::1723959436
 20 Enemies.png::CompressedTexture2D::8051730273178817541::1723959435::1723959436::1::::<><>::
 Hello.png::CompressedTexture2D::5329308112658401452::1723959435::1723959436::1::::<><>::
@@ -334,8 +342,8 @@ Idle.png::CompressedTexture2D::4674446615071954195::1723959435::1723959436::1:::
 ::res://Assets_PixelAdventure/Traps/Trampoline/::1723959436
 Idle.png::CompressedTexture2D::8447082495952128997::1723959435::1723959436::1::::<><>::
 Jump (28x28).png::CompressedTexture2D::7977340877600571288::1723959435::1723959436::1::::<><>::
-::res://Player/::1724767987
+::res://Player/::1724771511
 Camera2D.gd::GDScript::-1::1724767987::0::1::::<>Camera2D<>::
-player.gd::GDScript::-1::1724767987::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::4576862796462751471::1724767987::0::1::::<><>::uid://bei7x67psb4c4::::res://Assets_PixelAdventure/Main Characters/Mask Dude.png<>res://Player/player.gd<>res://Player/Camera2D.gd
-world.tscn::PackedScene::6104374876747941983::1724767987::0::1::::<><>::uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png
+player.gd::GDScript::-1::1724771419::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::4576862796462751471::1724771511::0::1::::<><>::uid://bei7x67psb4c4::::res://Assets_PixelAdventure/Main Characters/Mask Dude.png<>res://Player/player.gd<>res://Player/Camera2D.gd
+world.tscn::PackedScene::6104374876747941983::1724771511::0::1::::<><>::uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png
