@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name  Player  #le ponemos el nombre de Player a la clase para que pueda ser referenciado en otros scripts
+
 
 var spped := 120
 var direccion := 0.0
@@ -11,6 +13,15 @@ var jump := 260
 
 #inicializamos la variable $Sprite2D
 @onready var sprite := $Sprite2D
+
+#inicializamos la variable que hace referencia al Label FrutasLabel
+@onready var frutasLabel := $PlayerGUI/HBoxContainer/FrutasLabel
+
+
+func _ready():
+	#tenenos en la scena Global la variable player, se inicializa en cada cambio de escena
+	#en cada nueva scena tenemos un nuevo jugador
+	Global.player = self
 
 func _physics_process(delta):
 	
@@ -54,3 +65,7 @@ func _physics_process(delta):
 	# You can use this to make moving and rotating platforms, or to make nodes push other nodes.
 	move_and_slide()    #metodo ya implementado de Godot
 	
+	
+	#metodo llamado por la escene global
+func actualizaInterfazFrutas():
+		frutasLabel.text = str(Global.frutas)

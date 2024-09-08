@@ -1,2 +1,6 @@
 res://Player/player.tscn
 res://Player/world.tscn
+res://Coleccionables/fruta.tscn
+res://global.tscn
+res://Player/player.gd
+res://Global.gd
