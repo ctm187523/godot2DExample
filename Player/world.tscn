@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs8afrxnefdal"]
+[gd_scene load_steps=12 format=3 uid="uid://cs8afrxnefdal"]
 
 [ext_resource type="PackedScene" uid="uid://b6hci5m0bb7m6" path="res://Player/player.tscn" id="1_q4e47"]
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="2_80udn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Assets_PixelAdventure/Parallax/parallax-03.png" id="6_21vp1"]
 [ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="7_mv8vt"]
 [ext_resource type="PackedScene" uid="uid://dan8usfesrm7o" path="res://Coleccionables/fruta.tscn" id="8_l3uu0"]
+[ext_resource type="PackedScene" uid="uid://c4x5p0jpe2n4p" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn" id="9_gtnvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwuhu"]
 texture = ExtResource("2_80udn")
@@ -204,3 +205,6 @@ position = Vector2(423, 135)
 
 [node name="fruta6" parent="." instance=ExtResource("8_l3uu0")]
 position = Vector2(488, 135)
+
+[node name="EnemigoCerdito" parent="." instance=ExtResource("9_gtnvs")]
+position = Vector2(656, 112)

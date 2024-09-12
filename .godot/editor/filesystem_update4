@@ -1,6 +1,12 @@
 res://Player/player.tscn
+res://Player/GUIText.tres
 res://Player/world.tscn
 res://Coleccionables/fruta.tscn
 res://global.tscn
-res://Player/player.gd
 res://Global.gd
+res://Personajes.gd
+res://Persoajes/personajes.tscn
+res://Personajes/personajes.tscn
+res://Personajes/Personajes.gd
+res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn
+res://Personajes/EnemigoCerdito/enemigo_cerdito.gd

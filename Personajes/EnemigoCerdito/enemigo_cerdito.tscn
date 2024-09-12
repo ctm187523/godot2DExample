@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4x5p0jpe2n4p"]
+
+[ext_resource type="PackedScene" uid="uid://dteb3ypchgr8g" path="res://Personajes/personajes.tscn" id="1_i7hqr"]
+[ext_resource type="Texture2D" uid="uid://qh4778c8molj" path="res://Assets_PixelAdventure/Enemies/AngryPig/angryPig.png" id="2_lqfhp"]
+[ext_resource type="Script" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.gd" id="2_xc25t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erv1e"]
+size = Vector2(21, 26)
+
+[node name="EnemigoCerdito" groups=["Enemigos"] instance=ExtResource("1_i7hqr")]
+script = ExtResource("2_xc25t")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_lqfhp")
+hframes = 9
+vframes = 6
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_erv1e")
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "idle"

@@ -133,4 +133,5 @@ label_settings = ExtResource("4_vsv5c")
 
 [node name="FrutasLabel" type="Label" parent="PlayerGUI/HBoxContainer"]
 layout_mode = 2
+text = "0"
 label_settings = ExtResource("4_vsv5c")

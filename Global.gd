@@ -4,7 +4,7 @@ var frutas := 0  : #usamos un set-get, frutas se actualiza en el scriot de fruta
 	set(val):
 		frutas = val
 		if player != null:
-			player.actualizaInterfazFrutas()  #al recolectar una fruta, se incrementa el value, llamamos al metodo actualizaInterfazFrutas() para que actualize el label que en la interfaz(PlayerGUI) que tiene el player aumente el numero de frutas recolectadas
+			player.actualizaInterfazFrutas()  #al recolectar una fruta, se incrementa el value usamos la variable Global futas en el scrit de fruta.gd, llamamos al metodo actualizaInterfazFrutas() para que actualize el label que en la interfaz(PlayerGUI) que tiene el player aumente el numero de frutas recolectadas
 			$frutasSonido.play() #al recolectar la fruta ejecutamos un sonido, lo ponemos en las variables globales para que no se corte en el momento que se destruye la fruta al ser recolectada
 	get:
 		return frutas
