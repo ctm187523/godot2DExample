@@ -1,3 +1,6 @@
+RayCast2D
+Timer
+Node2D
 AnimationPlayer
 CollisionShape2D
 Sprite2D
@@ -9,6 +12,3 @@ CanvasLayer
 Node
 Area2D
 Camera2D
-ParallaxLayer
-ParallaxBackground
-TileMap

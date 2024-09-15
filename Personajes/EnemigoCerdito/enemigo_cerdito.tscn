@@ -21,3 +21,19 @@ shape = SubResource("RectangleShape2D_erv1e")
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "idle"
+
+[node name="RayCasts" type="Node2D" parent="." index="3"]
+
+[node name="RayCastSuelo" type="RayCast2D" parent="RayCasts" index="0"]
+target_position = Vector2(0, 20)
+
+[node name="RayCastSMuro" type="RayCast2D" parent="RayCasts" index="1"]
+target_position = Vector2(-20, 0)
+
+[node name="RayTimer" type="Timer" parent="RayCasts" index="2"]
+one_shot = true
+
+[node name="RayCastPlayerDetector" type="RayCast2D" parent="." index="4"]
+target_position = Vector2(-50, 0)
+
+[connection signal="timeout" from="RayCasts/RayTimer" to="." method="_on_ray_timer_timeout"]
