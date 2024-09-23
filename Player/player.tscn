@@ -135,3 +135,16 @@ label_settings = ExtResource("4_vsv5c")
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("4_vsv5c")
+
+[node name="RaycastDamage" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="RaycastDamage"]
+target_position = Vector2(0, 23)
+
+[node name="RayCast2D2" type="RayCast2D" parent="RaycastDamage"]
+position = Vector2(-7, 0)
+target_position = Vector2(0, 23)
+
+[node name="RayCast2D3" type="RayCast2D" parent="RaycastDamage"]
+position = Vector2(10, 0)
+target_position = Vector2(0, 23)

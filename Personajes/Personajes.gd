@@ -3,4 +3,4 @@ class_name Personajes      #damos nombre a la clase para que otros personajes pu
 
 
 var speed := 0
-var vida := 0 
+var vida := 1 

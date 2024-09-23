@@ -8,6 +8,9 @@ var direccion := 0.0
 const gravity := 9
 var jump := 260
 
+
+var damage = 1
+
 #inicializamos la variable $AnimationPlayer para manejar las animaciones
 @onready var anim := $AnimationPlayer
 
@@ -16,6 +19,8 @@ var jump := 260
 
 #inicializamos la variable que hace referencia al Label FrutasLabel
 @onready var frutasLabel := $PlayerGUI/HBoxContainer/FrutasLabel
+
+@onready var rasycastDamage := $RaycastDamage
 
 
 func _ready():
@@ -44,7 +49,7 @@ func _physics_process(delta):
 		anim.play("idle")
 	
 	#usamos la propiedad flip_h(voltear hotizontal), filp_b(voltear vertical) de sprite para voltear hacia derecha o izquierda el sprite
-	#fijarse que en el inspector esta esa propiedad como booleano activad-desactivado
+	#fijarse que en el inspector esta esa propiedad como booleano activado-desactivado
 	#usamos un if terciaro para que al ir hacia la izquierda y pararse no se gire hacia la derecha mantenga la posicion izquierda
 	sprite.flip_h = direccion < 0 if direccion != 0 else sprite.flip_h
 	
@@ -66,6 +71,26 @@ func _physics_process(delta):
 	move_and_slide()    #metodo ya implementado de Godot
 	
 	
+func _process(delta):
+	
+	#a cada frame recorremos con un for todos los hijos del grupo de raycast
+	#RaycastDamage, los obtenemos y comprobamos si tienen colision
+	for ray in rasycastDamage.get_children():
+		if ray.is_colliding():
+			var colision = ray.get_collider() #en la variable colision obtenemos con quien ha colisionado los raycast
+			if colision.is_in_group("Enemigos"):    #comprobamos si lo colisionado pertenece al grupo nemigos
+				if colision.has_method("takeDamage"):  #comprobamos si tiene el metodo takeDamage
+					colision.takeDamage(damage)   #llamamos al método takeDamage, #le pasamos el valor de la variable  damage inicializada arriba para dañar al cerdito
+	
 	#metodo llamado por la escene global
-func actualizaInterfazFrutas():
+func actualizaInterfazFrutas():    
 		frutasLabel.text = str(Global.frutas)
+
+
+#funcion llamada desde el enemigo cerdito para dañar al jugador cuando entra en su Area2d llamada DamagePlayer
+func takeDamage():
+	morir()  #llamamos a la funcion morir
+	
+func morir():
+	get_tree().reload_current_scene()  #al ser alcanzado por el cerdito recargamos de nuevo la escena, reiniciamos el juego
+	

@@ -16,7 +16,7 @@ var player
 var canChangeDirection = true   #flag para manejaar el cambio de direccion pasado un pequeño tiempo y no sea instantaneo
 
 #usamos un enum para definir los estados del cerdito(máquina de estados)
-enum estados {ANGRY,PATRULLAR}
+enum estados {ANGRY,PATRULLAR,MORIRSE}
 var estadoActual = estados.PATRULLAR
 
 #funciones
@@ -57,9 +57,10 @@ func _process(delta):
 			direccion=-1
 		elif  directionPlayer.x > 0:
 			direccion = 1			#si es mayor que cero va el cerdito a la derecha, cambiamos la direccion
-	
+		$Sprite2D.flip_h = true if direccion == 1 else false   #cambiamos la direccion cuando al cumplirse la condiciones y entrar en el if cambiamos el valor de la dirección y entonces se voltea la imagen horizontalmente
 
-	#comprobamos que este en estado de Patrullar a detectado al personaje con sus raycast
+	#comprobamos que este en estado de Patrullar y a detectado al muro con sus raycast y no esta cayendo(!raysuelo.is_colliding()) y entonces cambiamos la direccion
+	#al detectar el muro cambiamos la direccion y tambien el sentido del raycast
 	if estadoActual == estados.PATRULLAR:
 		#si  colisiona con el muro el raycast que apunta el muro lo multiplicamos
 		#por -1 para cambiar la direccion
@@ -72,11 +73,28 @@ func _process(delta):
 			$RayCasts/RayTimer.start()  #inciamos el Timer, al acabar el Timer llama a la funcion conectada de abajo _on_ray_timer_timeout 
 			direccion *= -1
 			rayos.scale.x *= -1
-	$Sprite2D.flip_h = true if direccion == 1 else false #cambiamos la direccion del sprite si direccion es 1
+		$Sprite2D.flip_h = true if direccion == 1 else false #cambiamos la direccion cuando al cumplirse la condiciones y entrar en el if cambiamos el valor de la dirección y entonces se voltea la imagen horizontalmente
 
+
+
+#metodo llamado desde el script del personaje cuando los raycast que tiene horizontales hacia abajo detecta al cerdito
+func takeDamage(damage):
+	vida -= damage   #la varialbe vida es heredada de personajes
+	if vida <=0:    #si la vida es menor o igual a cero el cerdito desaparece
+		$DamagePlayer/CollisionShape2D.set_deferred("disabled", true) #desabilitamos la zona de colision al morir para que si nos mata el player ya el cerdito no pueda matar al player
+		estadoActual = estados.MORIRSE  #cambiamos el estado para que de esta manera ya entra en ninguna condicion del codigo
+		anim.play("hurt")  #cambiamos la animacion a herido
+		$CollisionShape2D.set_deferred("disabled", true)   #desabilitamos las colisiones para que funcione correctamente y se desactive la colision cuando el enemigo muera
+		await (anim.animation_finished)  #le ponemos un await para que no se ejecute el queue_free() hasta que la animacion no haya acabado
+		queue_free()   #eliminamos al cerdito
 
 #metodo de la conexion de la señal del Timer, para que al colisionar pase un tiempo
 #para que no cambie del direccion al momento
 func _on_ray_timer_timeout():
 	canChangeDirection = true  #volvemos a poner en true la variable para que si colisiona cambie de direccion ya pasado un tiempo
 	pass # Replace with function body.
+
+#señal conectada con el Area2D llamada DamagePlayer para dañar al jugador
+func _on_damage_player_body_entered(body):
+	if body is Player:
+		body.takeDamage()   #llamamos a la funcion takeDamage del Player para dañarlo al entrar en su collisonShape del Area2d llamada DamagePlayer
