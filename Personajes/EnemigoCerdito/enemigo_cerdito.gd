@@ -97,4 +97,5 @@ func _on_ray_timer_timeout():
 #señal conectada con el Area2D llamada DamagePlayer para dañar al jugador
 func _on_damage_player_body_entered(body):
 	if body is Player:
-		body.takeDamage()   #llamamos a la funcion takeDamage del Player para dañarlo al entrar en su collisonShape del Area2d llamada DamagePlayer
+		body.takeDamage(dmg)   #llamamos a la funcion takeDamage del Player para dañarlo al entrar en su collisonShape del Area2d llamada DamagePlayer, le pasamos como parametro dmg que es la cantidad de daño que le hacemos,dmg es una variable que hereda de personajes
+		

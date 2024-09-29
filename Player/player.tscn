@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6hci5m0bb7m6"]
+[gd_scene load_steps=15 format=3 uid="uid://b6hci5m0bb7m6"]
 
 [ext_resource type="Texture2D" uid="uid://bei7x67psb4c4" path="res://Assets_PixelAdventure/Main Characters/Mask Dude.png" id="1_3j8gb"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_mcfuh"]
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="3_pgsaw"]
 [ext_resource type="LabelSettings" uid="uid://ve31s8ekbx6n" path="res://Player/GUIText.tres" id="4_vsv5c"]
+[ext_resource type="StyleBox" uid="uid://dpilq1fmiu88o" path="res://Personajes/EnemigoCerdito/hpGui.tres" id="5_xmi74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wf1p"]
 size = Vector2(22, 26)
@@ -20,7 +21,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [42]
 }
 
 [sub_resource type="Animation" id="Animation_3vw3u"]
@@ -37,6 +38,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [24]
+}
+
+[sub_resource type="Animation" id="Animation_kejap"]
+resource_name = "herido"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41, 42, 42]
 }
 
 [sub_resource type="Animation" id="Animation_j0l5l"]
@@ -93,12 +110,26 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_f4v01"),
 "fall": SubResource("Animation_3vw3u"),
+"herido": SubResource("Animation_kejap"),
 "idle": SubResource("Animation_j0l5l"),
 "jump": SubResource("Animation_j324i"),
 "walk": SubResource("Animation_pejqd")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2diw"]
+bg_color = Color(0.945098, 0.968627, 0.854902, 0.737255)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.286275, 0.286275, 0.286275, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 6
 script = ExtResource("1_mcfuh")
 metadata/_edit_vertical_guides_ = [-92.0]
 
@@ -106,7 +137,7 @@ metadata/_edit_vertical_guides_ = [-92.0]
 texture = ExtResource("1_3j8gb")
 hframes = 11
 vframes = 4
-frame = 1
+frame = 42
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3)
@@ -136,15 +167,35 @@ layout_mode = 2
 text = "0"
 label_settings = ExtResource("4_vsv5c")
 
+[node name="HPProgressBar" type="ProgressBar" parent="PlayerGUI"]
+offset_left = -1.0
+offset_top = 30.0
+offset_right = 118.0
+offset_bottom = 43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_w2diw")
+theme_override_styles/fill = ExtResource("5_xmi74")
+max_value = 10.0
+value = 5.0
+show_percentage = false
+
 [node name="RaycastDamage" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="RaycastDamage"]
 target_position = Vector2(0, 23)
+collision_mask = 2
 
 [node name="RayCast2D2" type="RayCast2D" parent="RaycastDamage"]
 position = Vector2(-7, 0)
 target_position = Vector2(0, 23)
+collision_mask = 2
 
 [node name="RayCast2D3" type="RayCast2D" parent="RaycastDamage"]
 position = Vector2(10, 0)
 target_position = Vector2(0, 23)
+collision_mask = 2
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

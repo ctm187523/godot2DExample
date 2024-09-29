@@ -22,14 +22,31 @@ var damage = 1
 
 @onready var rasycastDamage := $RaycastDamage
 
+#creamos los estados del personaje
+enum estados  {NORMAL, HERIDO}
+var estadoActual = estados.NORMAL
+
+
+var vida := 10:    #variable para restar vida al prota en la barra de vida, usamos un set-get
+	set(val):
+		vida = val
+		$PlayerGUI/HPProgressBar.value = vida    #ponemos el valor actual al progress var de la vida
 
 func _ready():
+	$PlayerGUI/HPProgressBar.value = vida   #al inicio ponemos el valor de la vida que es 10, vida completa
 	#tenenos en la scena Global la variable player, se inicializa en cada cambio de escena
 	#en cada nueva scena tenemos un nuevo jugador
 	Global.player = self
 
 func _physics_process(delta):
-	
+	#comprobamos el estado del personajes
+	if estadoActual == estados.NORMAL:  #si estamos en estado normal me puedo mover
+		processarEstadoNormal(delta)   #llamamos a la función de abajo
+
+
+#creamos una funcion para realizar el proceso cuando estamos en estado NORMAL	
+func processarEstadoNormal(delta):
+
 	#En godot 4 los CharacterBody2D ya tienen la propiedad de velocity
 	#get_axis nos devuelve -1 si vamos a la izquierda y 1 si vamos a la derecha
 	direccion = Input.get_axis("ui_left","ui_right")
@@ -70,7 +87,7 @@ func _physics_process(delta):
 	# You can use this to make moving and rotating platforms, or to make nodes push other nodes.
 	move_and_slide()    #metodo ya implementado de Godot
 	
-	
+
 func _process(delta):
 	
 	#a cada frame recorremos con un for todos los hijos del grupo de raycast
@@ -88,9 +105,21 @@ func actualizaInterfazFrutas():
 
 
 #funcion llamada desde el enemigo cerdito para dañar al jugador cuando entra en su Area2d llamada DamagePlayer
-func takeDamage():
-	morir()  #llamamos a la funcion morir
+func takeDamage(dmg):
+	if estadoActual != estados.HERIDO:   #si estamos no estamos HERIDO es decir estamos en estado NORMAL podemos volver a tener el estado HERIDO y se ejecuta el codigo de abajo
+		vida-=dmg  #restamos la vida del prota con el valor del argumento recibidp en la funcion enivada por el enemigo_cerdito
+		estadoActual = estados.HERIDO  #cambiamos el estado del personaje
+		anim.play("herido")    #cambiamos la escena(los sprites) al estado Herido
+		$CooldownTimer.start() #inicializamos el Timer $CooldownTimer al ser herido para que pasado 0.6 segundos vuelva a poner el estado en Normal llamando a la funcion de abajo _on_cooldown_timer_timeout():º 
+		#print(vida)
+		if vida <=0:
+			morir()  #llamamos a la funcion morir
 	
 func morir():
 	get_tree().reload_current_scene()  #al ser alcanzado por el cerdito recargamos de nuevo la escena, reiniciamos el juego
 	
+
+
+#señal conectada con el Nodo Timer CooldownTimer
+func _on_cooldown_timer_timeout():
+	estadoActual = estados.NORMAL 
