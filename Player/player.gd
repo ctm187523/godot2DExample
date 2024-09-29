@@ -23,7 +23,7 @@ var damage = 1
 @onready var rasycastDamage := $RaycastDamage
 
 #creamos los estados del personaje
-enum estados  {NORMAL, HERIDO}
+enum estados  {NORMAL, HERIDO, DANADO}
 var estadoActual = estados.NORMAL
 
 

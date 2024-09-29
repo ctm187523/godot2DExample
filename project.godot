@@ -37,6 +37,7 @@ version_control/autoload_on_startup=true
 2d_physics/layer_1="player"
 2d_physics/layer_2="enemigos"
 2d_physics/layer_3="world"
+2d_physics/layer_4="world2"
 
 [rendering]
 
