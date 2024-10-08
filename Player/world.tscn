@@ -190,26 +190,52 @@ motion_mirroring = Vector2(1008, 0)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("7_mv8vt")
 
-[node name="fruta" parent="." instance=ExtResource("8_l3uu0")]
+[node name="Items" type="Node" parent="."]
+
+[node name="fruta" parent="Items" instance=ExtResource("8_l3uu0")]
 position = Vector2(400, 135)
 
-[node name="fruta2" parent="." instance=ExtResource("8_l3uu0")]
+[node name="fruta2" parent="Items" instance=ExtResource("8_l3uu0")]
 position = Vector2(511, 135)
 
-[node name="fruta3" parent="." instance=ExtResource("8_l3uu0")]
+[node name="fruta3" parent="Items" instance=ExtResource("8_l3uu0")]
 position = Vector2(466, 135)
 
-[node name="fruta4" parent="." instance=ExtResource("8_l3uu0")]
+[node name="fruta4" parent="Items" instance=ExtResource("8_l3uu0")]
 position = Vector2(445, 135)
 
-[node name="fruta5" parent="." instance=ExtResource("8_l3uu0")]
+[node name="fruta5" parent="Items" instance=ExtResource("8_l3uu0")]
 position = Vector2(423, 135)
 
-[node name="fruta6" parent="." instance=ExtResource("8_l3uu0")]
+[node name="fruta6" parent="Items" instance=ExtResource("8_l3uu0")]
 position = Vector2(488, 135)
 
-[node name="EnemigoCerdito" parent="." instance=ExtResource("9_gtnvs")]
-position = Vector2(656, 112)
+[node name="EnemigoCerdito" parent="Items" instance=ExtResource("9_gtnvs")]
+position = Vector2(636, 113)
+
+[node name="EnemigoCerdito2" parent="Items" instance=ExtResource("9_gtnvs")]
+position = Vector2(282, 98)
+
+[node name="EnemigoCerdito3" parent="Items" instance=ExtResource("9_gtnvs")]
+position = Vector2(1640, 67)
+
+[node name="EnemigoCerdito4" parent="Items" instance=ExtResource("9_gtnvs")]
+position = Vector2(1445, 128)
+
+[node name="fruta7" parent="Items" instance=ExtResource("8_l3uu0")]
+position = Vector2(1158, 151)
+
+[node name="fruta8" parent="Items" instance=ExtResource("8_l3uu0")]
+position = Vector2(1174, 151)
+
+[node name="fruta9" parent="Items" instance=ExtResource("8_l3uu0")]
+position = Vector2(1137, 15)
+
+[node name="fruta10" parent="Items" instance=ExtResource("8_l3uu0")]
+position = Vector2(931, 119)
+
+[node name="fruta11" parent="Items" instance=ExtResource("8_l3uu0")]
+position = Vector2(958, 119)
 
 [node name="FinDeNivel" parent="." instance=ExtResource("10_v16sp")]
 position = Vector2(1730, 48)

@@ -73,6 +73,7 @@ func processarEstadoNormal(delta):
 	#añadimos un salto,al presionar espacio
 	#usamos is_on_floor() para que solo pueda saltar si esta en el suelo y no haga repetidos saltos sin haber caido
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
+		$AudioSalto.play()   #ponemos el audio para el salto
 		velocity.y -= jump   #modificamos la y
 	
 	
@@ -107,6 +108,7 @@ func actualizaInterfazFrutas():
 #funcion llamada desde el enemigo cerdito para dañar al jugador cuando entra en su Area2d llamada DamagePlayer
 func takeDamage(dmg):
 	if estadoActual != estados.HERIDO:   #si estamos no estamos HERIDO es decir estamos en estado NORMAL podemos volver a tener el estado HERIDO y se ejecuta el codigo de abajo
+		$AudioHerirse.play()   #ponemos el audio al ser herido
 		vida-=dmg  #restamos la vida del prota con el valor del argumento recibidp en la funcion enivada por el enemigo_cerdito
 		estadoActual = estados.HERIDO  #cambiamos el estado del personaje
 		anim.play("herido")    #cambiamos la escena(los sprites) al estado Herido

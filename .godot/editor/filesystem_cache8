@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1727626253
+::res://::1728140688
 fin_de_nivel.gd::GDScript::-1::1727622771::0::1::::<>Area2D<>::
-fin_de_nivel.tscn::PackedScene::2405663039707963998::1727626253::0::1::::<><>::res://fin_de_nivel.gd<>uid://di1m7shyd3pjf::::res://Assets_PixelAdventure/Items/Checkpoints/End/End (Idle).png
+fin_de_nivel.tscn::PackedScene::2405663039707963998::1727628127::0::1::::<><>::res://fin_de_nivel.gd<>uid://di1m7shyd3pjf::::res://Assets_PixelAdventure/Items/Checkpoints/End/End (Idle).png
 Global.gd::GDScript::-1::1726075231::0::1::::<>Node<>::
-global.tscn::PackedScene::305745940732551496::1727626253::0::1::::<><>::res://Global.gd<>uid://di2p4xwb1340l::::res://Assets_PixelAdventure/Sounds/confirmation_002.ogg
+global.tscn::PackedScene::305745940732551496::1727628127::0::1::::<><>::res://Global.gd<>uid://di2p4xwb1340l::::res://Assets_PixelAdventure/Sounds/confirmation_002.ogg
 icon.svg::CompressedTexture2D::6775898557387516117::1723959318::1723959323::1::::<><>::
 ::res://addons/::1724768859
 ::res://addons/godot-git-plugin/::1724768859
@@ -347,20 +347,20 @@ Idle.png::CompressedTexture2D::4674446615071954195::1723959435::1723959436::1:::
 ::res://Assets_PixelAdventure/Traps/Trampoline/::1723959436
 Idle.png::CompressedTexture2D::8447082495952128997::1723959435::1723959436::1::::<><>::
 Jump (28x28).png::CompressedTexture2D::7977340877600571288::1723959435::1723959436::1::::<><>::
-::res://Coleccionables/::1727626253
+::res://Coleccionables/::1727628127
 fruta.gd::GDScript::-1::1725721941::0::1::::<>Area2D<>::
-fruta.tscn::PackedScene::7188139291872275046::1727626253::0::1::::<><>::res://Coleccionables/fruta.gd<>uid://gih5ed42qg6a::::res://Assets_PixelAdventure/Items/Fruits/Strawberry.png
-::res://Personajes/::1727626253
+fruta.tscn::PackedScene::7188139291872275046::1727628127::0::1::::<><>::res://Coleccionables/fruta.gd<>uid://gih5ed42qg6a::::res://Assets_PixelAdventure/Items/Fruits/Strawberry.png
+::res://Personajes/::1727628127
 Personajes.gd::GDScript::-1::1727540981::0::1::::Personajes<>CharacterBody2D<>::
-personajes.tscn::PackedScene::8501219594273212620::1727626253::0::1::::<><>::res://Personajes/Personajes.gd
-::res://Personajes/EnemigoCerdito/::1727626253
+personajes.tscn::PackedScene::8501219594273212620::1727628127::0::1::::<><>::res://Personajes/Personajes.gd
+::res://Personajes/EnemigoCerdito/::1727628127
 enemigo_cerdito.gd::GDScript::-1::1727622771::0::1::::<>Personajes<>::
-enemigo_cerdito.tscn::PackedScene::6857648145599030741::1727626253::0::1::::<><>::uid://dteb3ypchgr8g::::res://Personajes/personajes.tscn<>uid://qh4778c8molj::::res://Assets_PixelAdventure/Enemies/AngryPig/angryPig.png<>res://Personajes/EnemigoCerdito/enemigo_cerdito.gd
+enemigo_cerdito.tscn::PackedScene::6857648145599030741::1727628127::0::1::::<><>::uid://dteb3ypchgr8g::::res://Personajes/personajes.tscn<>uid://qh4778c8molj::::res://Assets_PixelAdventure/Enemies/AngryPig/angryPig.png<>res://Personajes/EnemigoCerdito/enemigo_cerdito.gd
 hpGui.tres::StyleBoxFlat::8229307561193043540::1727622771::0::1::::<><>::
-::res://Player/::1727626253
+::res://Player/::1727628127
 Camera2D.gd::GDScript::-1::1724767987::0::1::::<>Camera2D<>::
 GUIText.tres::LabelSettings::1483970730447927791::1727622771::0::1::::<><>::
 player.gd::GDScript::-1::1727610134::0::1::::Player<>CharacterBody2D<>::
-player.tscn::PackedScene::4576862796462751471::1727626253::0::1::::<><>::uid://bei7x67psb4c4::::res://Assets_PixelAdventure/Main Characters/Mask Dude.png<>res://Player/player.gd<>res://Player/Camera2D.gd<>uid://ve31s8ekbx6n::::res://Player/GUIText.tres<>uid://dpilq1fmiu88o::::res://Personajes/EnemigoCerdito/hpGui.tres
-world.tscn::PackedScene::6104374876747941983::1727626253::0::1::::<><>::uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png<>uid://dan8usfesrm7o::::res://Coleccionables/fruta.tscn<>uid://c4x5p0jpe2n4p::::res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn<>uid://bajk6iehee855::::res://fin_de_nivel.tscn
-world_2.tscn::PackedScene::1043586797945611296::1727626253::0::1::::<><>::uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://bajk6iehee855::::res://fin_de_nivel.tscn<>uid://b6hci5m0bb7m6::::res://Player/player.tscn
+player.tscn::PackedScene::4576862796462751471::1727628127::0::1::::<><>::uid://bei7x67psb4c4::::res://Assets_PixelAdventure/Main Characters/Mask Dude.png<>res://Player/player.gd<>res://Player/Camera2D.gd<>uid://ve31s8ekbx6n::::res://Player/GUIText.tres<>uid://dpilq1fmiu88o::::res://Personajes/EnemigoCerdito/hpGui.tres
+world.tscn::PackedScene::6104374876747941983::1727628127::0::1::::<><>::uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png<>uid://dan8usfesrm7o::::res://Coleccionables/fruta.tscn<>uid://c4x5p0jpe2n4p::::res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn<>uid://bajk6iehee855::::res://fin_de_nivel.tscn
+world_2.tscn::PackedScene::1043586797945611296::1727628127::0::1::::<><>::uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://bajk6iehee855::::res://fin_de_nivel.tscn<>uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://c4mxtkjr4qte7::::res://Assets_PixelAdventure/Parallax/estrellado.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png

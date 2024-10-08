@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6hci5m0bb7m6"]
+[gd_scene load_steps=17 format=3 uid="uid://b6hci5m0bb7m6"]
 
 [ext_resource type="Texture2D" uid="uid://bei7x67psb4c4" path="res://Assets_PixelAdventure/Main Characters/Mask Dude.png" id="1_3j8gb"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_mcfuh"]
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="3_pgsaw"]
 [ext_resource type="LabelSettings" uid="uid://ve31s8ekbx6n" path="res://Player/GUIText.tres" id="4_vsv5c"]
 [ext_resource type="StyleBox" uid="uid://dpilq1fmiu88o" path="res://Personajes/EnemigoCerdito/hpGui.tres" id="5_xmi74"]
+[ext_resource type="AudioStream" uid="uid://ba2hxqf376lg" path="res://Assets_PixelAdventure/Sounds/Jump.ogg" id="6_8qwku"]
+[ext_resource type="AudioStream" uid="uid://bk01bmd5p2v58" path="res://Assets_PixelAdventure/Sounds/Hit.ogg" id="7_5iect"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wf1p"]
 size = Vector2(22, 26)
@@ -197,5 +199,11 @@ collision_mask = 2
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
+
+[node name="AudioSalto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_8qwku")
+
+[node name="AudioHerirse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5iect")
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

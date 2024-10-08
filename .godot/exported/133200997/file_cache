@@ -1,0 +1,11 @@
+res://Coleccionables/fruta.tscn::03114fc92aaff1141d6db8336a500b5f::1728143503::res://.godot/exported/133200997/export-51099df9a70b24b45f3de2daf6300753-fruta.scn
+res://Mapas/main_menu.tscn::b02c107820e33633ea3476396d7307b3::1728143504::res://.godot/exported/133200997/export-214403c20822ade5a7bf257a507febb1-main_menu.scn
+res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn::09d523106c0500191de3d0ad052ff078::1728143503::res://.godot/exported/133200997/export-1d225f95f2507daf7b3c992fe2b85157-enemigo_cerdito.scn
+res://Personajes/EnemigoCerdito/hpGui.tres::e33629bfa502d06a0d8901cea36b6fce::1728140697::res://.godot/exported/133200997/export-3e3ff64bc248b4409e7320876d1fa56b-hpGui.res
+res://Personajes/personajes.tscn::85cd9f662e00e37c938b026bbb65e985::1728143503::res://.godot/exported/133200997/export-d81dd3a6c4c4fda080f1e20f214dca7b-personajes.scn
+res://Player/GUIText.tres::4599b17cf1c21a0ff62bf81d3026eab8::1728140697::res://.godot/exported/133200997/export-ac0602bee8c7709174ffb9784db714fd-GUIText.res
+res://Player/player.tscn::d686b525a0ba5f7f7d85cc8a8a015ad4::1728143503::res://.godot/exported/133200997/export-d267b47f7e81a3258979164d56d0d9c2-player.scn
+res://Player/world.tscn::698ed4496336d5ec0041d80160607a94::1728143503::res://.godot/exported/133200997/export-4e3932a7bc1f21b247d0c91c7436a680-world.scn
+res://Player/world_2.tscn::94c44c1184df24cf52e2912db4c46e56::1728143503::res://.godot/exported/133200997/export-4e00e3e6d1e1b338cde4dc20da1482b6-world_2.scn
+res://fin_de_nivel.tscn::8249d5d43be57e2187daf241c193f607::1728143503::res://.godot/exported/133200997/export-b5042b26ee896ef36acb762e69ffdd74-fin_de_nivel.scn
+res://global.tscn::665c6cfc1ffb2f45234bb8f235140346::1728143503::res://.godot/exported/133200997/export-cf8532bc06c1243e731119a1dc90fa78-global.scn

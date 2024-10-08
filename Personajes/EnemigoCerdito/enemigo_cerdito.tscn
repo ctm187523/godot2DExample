@@ -12,7 +12,7 @@ size = Vector2(25, 26)
 
 [node name="EnemigoCerdito" groups=["Enemigos"] instance=ExtResource("1_i7hqr")]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("2_xc25t")
 
 [node name="Sprite2D" parent="." index="0" groups=["Enemigos"]]
