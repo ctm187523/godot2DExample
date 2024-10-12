@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://o4rys0d3n0oy"]
+[gd_scene load_steps=15 format=3 uid="uid://o4rys0d3n0oy"]
 
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="1_tbo6p"]
 [ext_resource type="PackedScene" uid="uid://bajk6iehee855" path="res://fin_de_nivel.tscn" id="2_pxxhx"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Assets_PixelAdventure/Parallax/parallax-03.png" id="7_fa3n0"]
 [ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="8_fw2f1"]
 [ext_resource type="PackedScene" uid="uid://c4x5p0jpe2n4p" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn" id="9_ohd87"]
+[ext_resource type="PackedScene" uid="uid://b2pka1j7j2yqb" path="res://Personajes/MovingPlatform/plataforma.tscn" id="10_y1ded"]
+[ext_resource type="PackedScene" uid="uid://dmiarouihq1o" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="11_uuc63"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1b1s"]
 texture = ExtResource("1_tbo6p")
@@ -154,6 +156,9 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_c1b1s")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shr4e"]
+size = Vector2(270, 18)
+
 [node name="world2" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -221,3 +226,25 @@ position = Vector2(1335, 81)
 
 [node name="EnemigoCerdito" parent="." instance=ExtResource("9_ohd87")]
 position = Vector2(1161, 146)
+
+[node name="Plataforma" parent="." instance=ExtResource("10_y1ded")]
+position = Vector2(453, 106)
+
+[node name="PathFollow2D" parent="Plataforma" index="0"]
+position = Vector2(204.483, -10.279)
+rotation = -2.84142
+progress = 292.285
+
+[node name="Plataforma" parent="Plataforma" index="1"]
+position = Vector2(206.307, -9.71456)
+
+[node name="FallDamage" parent="." instance=ExtResource("11_uuc63")]
+position = Vector2(436, 150)
+collision_layer = 15
+
+[node name="CollisionShape2D" parent="FallDamage" index="0"]
+position = Vector2(116, 1)
+shape = SubResource("RectangleShape2D_shr4e")
+
+[editable path="Plataforma"]
+[editable path="FallDamage"]
