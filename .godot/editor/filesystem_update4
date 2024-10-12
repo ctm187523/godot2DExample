@@ -11,6 +11,4 @@ res://Player/world_2.tscn
 res://fin_de_nivel.tscn
 res://Mapas/main_menu.tscn
 res://Personajes/MovingPlatform/plataforma.tscn
-res://Personajes/MovingPlatform/plataforma.gd
-res://Personajes/MovingPlatform/fall_damage.gd
 res://Personajes/MovingPlatform/fall_damage.tscn

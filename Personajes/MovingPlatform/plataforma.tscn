@@ -17,7 +17,7 @@ curve = SubResource("Curve2D_h4uf3")
 script = ExtResource("1_n2cqs")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-28, 1)
+position = Vector2(12, 16)
 
 [node name="Plataforma" type="CharacterBody2D" parent="."]
 collision_layer = 13

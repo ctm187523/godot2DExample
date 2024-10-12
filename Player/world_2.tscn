@@ -247,7 +247,7 @@ position = Vector2(453, 106)
 curve = SubResource("Curve2D_in0du")
 
 [node name="PathFollow2D" parent="Plataforma" index="0"]
-position = Vector2(-6.83774, 15.4476)
+position = Vector2(-6.83808, 15.4476)
 rotation = 0.0624188
 progress = 497.091
 
