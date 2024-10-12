@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://o4rys0d3n0oy"]
+[gd_scene load_steps=18 format=3 uid="uid://o4rys0d3n0oy"]
 
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="1_tbo6p"]
 [ext_resource type="PackedScene" uid="uid://bajk6iehee855" path="res://fin_de_nivel.tscn" id="2_pxxhx"]
@@ -156,8 +156,23 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_c1b1s")
 
+[sub_resource type="Curve2D" id="Curve2D_in0du"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 12, 16, 0, 0, 0, 0, 51, 16, 0, 0, 0, 0, 106, 16, 0, 0, 0, 0, 146, 4, 0, 0, 0, 0, 184, -1, 0, 0, 0, 0, 214, -5, 0, 0, 0, 0, 160, -35, 0, 0, 0, 0, 105, -39, 0, 0, 0, 0, 57, -33, 0, 0, 0, 0, 19, -26, 0, 0, 0, 0, -3, -19, 0, 0, 0, 0, -20, -6, 0, 0, 0, 0, -28, -2, 0, 0, 0, 0, -27, 13, 0, 0, 0, 0, -14, 15, 0, 0, 0, 0, 2, 16, 0, 0, 0, 0, 11, 15)
+}
+point_count = 17
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shr4e"]
 size = Vector2(270, 18)
+
+[sub_resource type="Curve2D" id="Curve2D_wrscv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -72, 0, 0, 0, 0, 0, 19, 7, 0, 0, 0, 0, 70, 20, 0, 0, 0, 0, 111, 23, 0, 0, 0, 0, 126, -10, 0, 0, 0, 0, 115, -44, 0, 0, 0, 0, 93, -77, 0, 0, 0, 0, 57, -93, 0, 0, 0, 0, 25, -105, 0, 0, 0, 0, -24, -100, 0, 0, 0, 0, -54, -93, 0, 0, 0, 0, -72, -75, 0, 0, 0, 0, -76, -50, 0, 0, 0, 0, -74, -23, 0, 0, 0, 0, -73, -2)
+}
+point_count = 15
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0513y"]
+size = Vector2(252, 20)
 
 [node name="world2" type="Node"]
 
@@ -229,14 +244,15 @@ position = Vector2(1161, 146)
 
 [node name="Plataforma" parent="." instance=ExtResource("10_y1ded")]
 position = Vector2(453, 106)
+curve = SubResource("Curve2D_in0du")
 
 [node name="PathFollow2D" parent="Plataforma" index="0"]
-position = Vector2(204.483, -10.279)
-rotation = -2.84142
-progress = 292.285
+position = Vector2(-6.83774, 15.4476)
+rotation = 0.0624188
+progress = 497.091
 
 [node name="Plataforma" parent="Plataforma" index="1"]
-position = Vector2(206.307, -9.71456)
+position = Vector2(-9.00577, 15.3121)
 
 [node name="FallDamage" parent="." instance=ExtResource("11_uuc63")]
 position = Vector2(436, 150)
@@ -246,5 +262,17 @@ collision_layer = 15
 position = Vector2(116, 1)
 shape = SubResource("RectangleShape2D_shr4e")
 
+[node name="Platform" parent="." instance=ExtResource("10_y1ded")]
+position = Vector2(1465, 102)
+curve = SubResource("Curve2D_wrscv")
+
+[node name="FallDamage2" parent="." instance=ExtResource("11_uuc63")]
+position = Vector2(1387, 151)
+
+[node name="CollisionShape2D" parent="FallDamage2" index="0"]
+position = Vector2(116, 0)
+shape = SubResource("RectangleShape2D_0513y")
+
 [editable path="Plataforma"]
 [editable path="FallDamage"]
+[editable path="FallDamage2"]
