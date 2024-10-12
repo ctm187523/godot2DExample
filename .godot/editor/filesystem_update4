@@ -9,6 +9,4 @@ res://Personajes/personajes.tscn
 res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn
 res://Player/world_2.tscn
 res://fin_de_nivel.tscn
-res://Mapas/main_menu.gd
 res://Mapas/main_menu.tscn
-res://Player/player.gd
