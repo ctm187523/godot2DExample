@@ -254,12 +254,12 @@ position = Vector2(313, 124)
 curve = SubResource("Curve2D_in0du")
 
 [node name="PathFollow2D" parent="Plataforma" index="0"]
-position = Vector2(343.504, -30.3386)
-rotation = 0.533708
-progress = 214.862
+position = Vector2(205.173, -4.89137)
+rotation = -3.09163
+progress = 395.529
 
 [node name="Plataforma" parent="Plataforma" index="1"]
-position = Vector2(342.062, -31.196)
+position = Vector2(206.863, -4.80685)
 
 [node name="FallDamage" parent="." instance=ExtResource("11_uuc63")]
 position = Vector2(436, 150)
@@ -284,49 +284,35 @@ shape = SubResource("RectangleShape2D_0513y")
 position = Vector2(807, 160)
 
 [node name="SierraVerdadera" parent="Sierra" index="0"]
-position = Vector2(-61.0757, 1.974)
+position = Vector2(22.9272, 0.838821)
 
 [node name="Sprite" parent="Sierra/SierraVerdadera" index="0"]
-rotation = 10457.7
+rotation = 13108.5
 
 [node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
-position = Vector2(-62.6514, 1.99529)
+position = Vector2(21.377, 0.859771)
 rotation = -0.0135127
-progress = 317.686
-
-[node name="Sierra" parent="Sierra" instance=ExtResource("12_g5cs1")]
-
-[node name="SierraVerdadera" parent="Sierra/Sierra" index="0"]
-position = Vector2(-67.8234, -0.792938)
-
-[node name="Sprite" parent="Sierra/Sierra/SierraVerdadera" index="0"]
-rotation = 5811.36
-
-[node name="PathFollow2D" parent="Sierra/Sierra/Path2D" index="0"]
-position = Vector2(-66.2911, -0.731646)
-rotation = -3.10161
-progress = 172.26
+progress = 401.706
 
 [node name="Sierra2" parent="." instance=ExtResource("12_g5cs1")]
 position = Vector2(1088, 47)
 
 [node name="SierraVerdadera" parent="Sierra2" index="0"]
-position = Vector2(-81.8233, 12)
+position = Vector2(-58.015, 12)
 
 [node name="Sprite" parent="Sierra2/SierraVerdadera" index="0"]
-rotation = 4980.83
+rotation = 7631.59
 
 [node name="Path2D" parent="Sierra2" index="1"]
 position = Vector2(7.62939e-06, 0)
 curve = SubResource("Curve2D_vtknx")
 
 [node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
-position = Vector2(-80.8329, 12)
-progress = 177.818
+position = Vector2(-59.0535, 12)
+progress = 199.588
 
 [editable path="Plataforma"]
 [editable path="FallDamage"]
 [editable path="FallDamage2"]
 [editable path="Sierra"]
-[editable path="Sierra/Sierra"]
 [editable path="Sierra2"]

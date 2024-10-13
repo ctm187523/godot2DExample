@@ -17,11 +17,12 @@ curve = SubResource("Curve2D_h4uf3")
 script = ExtResource("1_n2cqs")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(96.1662, 16)
-progress = 84.1023
+position = Vector2(105.99, -38.9563)
+rotation = -3.06899
+progress = 320.241
 
 [node name="Plataforma" type="CharacterBody2D" parent="."]
-position = Vector2(94.3074, 16)
+position = Vector2(104.31, -38.9483)
 collision_layer = 13
 
 [node name="BrownOff" type="Sprite2D" parent="Plataforma"]
