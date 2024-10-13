@@ -1,7 +1,9 @@
-res://Player/player.tscn
+res://Trampas/sierra.tscn
 res://Personajes/EnemigoCerdito/enemigo_cerdito.gd
 res://Player/GUIText.tres
 res://Personajes/EnemigoCerdito/hpGui.tres
+res://Trampas/sierra.gd
+res://Player/player.tscn
 res://Player/world.tscn
 res://Coleccionables/fruta.tscn
 res://global.tscn
@@ -12,3 +14,4 @@ res://fin_de_nivel.tscn
 res://Mapas/main_menu.tscn
 res://Personajes/MovingPlatform/plataforma.tscn
 res://Personajes/MovingPlatform/fall_damage.tscn
+res://Personajes/MovingPlatform/plataforma.gd
