@@ -33,5 +33,6 @@ shape = SubResource("RectangleShape2D_d2fpy")
 curve = SubResource("Curve2D_xnt0l")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(46, 0)
 
 [connection signal="body_entered" from="SierraVerdadera/DamagePlayer" to="." method="_on_damage_player_body_entered"]

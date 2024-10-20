@@ -254,12 +254,12 @@ position = Vector2(313, 124)
 curve = SubResource("Curve2D_in0du")
 
 [node name="PathFollow2D" parent="Plataforma" index="0"]
-position = Vector2(205.173, -4.89137)
-rotation = -3.09163
-progress = 395.529
+position = Vector2(314.481, -6.10548)
+rotation = 3.1113
+progress = 286.052
 
 [node name="Plataforma" parent="Plataforma" index="1"]
-position = Vector2(206.863, -4.80685)
+position = Vector2(316.233, -6.15857)
 
 [node name="FallDamage" parent="." instance=ExtResource("11_uuc63")]
 position = Vector2(436, 150)
@@ -284,32 +284,33 @@ shape = SubResource("RectangleShape2D_0513y")
 position = Vector2(807, 160)
 
 [node name="SierraVerdadera" parent="Sierra" index="0"]
-position = Vector2(22.9272, 0.838821)
+position = Vector2(-80.1547, 2.23183)
 
 [node name="Sprite" parent="Sierra/SierraVerdadera" index="0"]
-rotation = 13108.5
+rotation = 13241.9
 
 [node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
-position = Vector2(21.377, 0.859771)
+position = Vector2(-78.6085, 2.21093)
 rotation = -0.0135127
-progress = 401.706
+progress = 301.736
 
 [node name="Sierra2" parent="." instance=ExtResource("12_g5cs1")]
 position = Vector2(1088, 47)
 
 [node name="SierraVerdadera" parent="Sierra2" index="0"]
-position = Vector2(-58.015, 12)
+position = Vector2(-109.047, -9.14248)
 
 [node name="Sprite" parent="Sierra2/SierraVerdadera" index="0"]
-rotation = 7631.59
+rotation = 7765.01
 
 [node name="Path2D" parent="Sierra2" index="1"]
 position = Vector2(7.62939e-06, 0)
 curve = SubResource("Curve2D_vtknx")
 
 [node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
-position = Vector2(-59.0535, 12)
-progress = 199.588
+position = Vector2(-108.732, -8.19621)
+rotation = 1.24905
+progress = 135.35
 
 [editable path="Plataforma"]
 [editable path="FallDamage"]
