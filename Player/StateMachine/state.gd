@@ -2,7 +2,7 @@ class_name State #le damos nombre a la clase ya que este sera un estado generico
 
 extends Node
 
-#variable para que se asigne la maquina de estados, se asigna en el Scrip stateMachine.gd
+#variable para que se asigne la maquina de estados, se asigna en el Scrip stateMachine.gd, el script
 var state_machine = null
 
 #variable para que se asigne la animacion, la hacemos export para

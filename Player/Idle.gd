@@ -9,12 +9,12 @@ func state_enter_state(msg := {}):
 	#reiniciamos a cero la velocidad
 	#En godot 4 los CharacterBody2D ya tienen la propiedad de velocity
 	#el Nodo raiz del Player es un CharacterBody que le hemos llamado Player
-	owner.velocity = Vector2.ZERO  
+	owner.velocity = Vector2.ZERO
 	#obtenemos la animacion del AnimationPlayer del Player
 	#asignado en el Inspector gracias a la propiedad que hereda
 	#del script state.gd anim_player
 	#usamos la variable anim_player para poner la animacion de idle
-	anim_player.play("idle")  
+	anim_player.play("idle")
 	
 	
 	
@@ -22,6 +22,8 @@ func state_process(delta):
 	#obtenemos la entrada de teclado/mandos/etc, en derecha e izquierda valores de -1 a 1
 	var direccion = Input.get_axis("ui_left","ui_right")
 
+	owner.move_and_slide()  #lo ponemos para que se mueva en el stado Idle
+	
 	if direccion != 0:
 		#usamos la variable state_machine del padre state.gd y su metodo transition_to
 		#para cambiar el estado, este metodo es del script stateMachine.gd
@@ -38,4 +40,5 @@ func state_process(delta):
 		#en el metodo state_enter_state del script enAire.gd comprueba
 		#que el mensaje sea Salto para realizar una accion
 		state_machine.transition_to("enAire",{Salto = true})
-
+	elif owner.is_on_floor():   #si estamos en el suelo reseteamo la variable del Player numSaltos para que vuelva a ser 2 
+		owner.numSaltos = 2

@@ -94,8 +94,4 @@ func _on_ray_timer_timeout():
 	canChangeDirection = true  #volvemos a poner en true la variable para que si colisiona cambie de direccion ya pasado un tiempo
 	pass # Replace with function body.
 
-#señal conectada con el Area2D llamada DamagePlayer para dañar al jugador
-func _on_damage_player_body_entered(body):
-	if body is Player:
-		body.takeDamage(dmg)   #llamamos a la funcion takeDamage del Player para dañarlo al entrar en su collisonShape del Area2d llamada DamagePlayer, le pasamos como parametro dmg que es la cantidad de daño que le hacemos,dmg es una variable que hereda de personajes
-		
+

@@ -30,10 +30,6 @@ func _process(delta):
 	elif path.progress_ratio <= .05:
 		isRight = true
 
-#señal conectada del nodo DamagePlayer, al interactuar con la
-#sierra quitamos vida al Player, llamando a su metodo takeDamage
-func _on_damage_player_body_entered(body):
-	if body is Player:
-		body.takeDamage(dmg)
+
 
 

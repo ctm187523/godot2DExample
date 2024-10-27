@@ -29,7 +29,7 @@ func _ready():
 	#en null en el script state.gd sea la StateMachine(node) la maquina de estados
 	for child in get_children():
 		child.state_machine = self    #decimos que la propiedad state_machine de los hijos del Node StateMachine seamos nosotros mismos el Node padre StateMachine la maquina de estados(state_machine) 
-	state.state_enter_state()   #llamamos al metodo state_enter_state del script state.gd
+	state.state_enter_state()   	  #llamamos al metodo state_enter_state del script state.gd
 
 
 #hacemos un override de los estados, sobreescribir las funciones

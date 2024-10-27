@@ -22,16 +22,24 @@ var damage = 1
 
 @onready var rasycastDamage := $RaycastDamage
 
+@onready var dmgColision := $RecibirDanio #inicializamos el Area2D RecibirDanio para manejar las colisiones con los enemigos
+
 #creamos los estados del personaje
 #COMENTADO CODIGO ANTERIOR A LA CREACION DE LA MAQUINA DE ESTADOS
 #enum estados  {NORMAL, HERIDO, DANADO}
 #var estadoActual = estados.NORMAL
 
+#creamos un nodo que contiene la maquina de estados $StateMachine
+#para poder cambiar estados del Player lo usamos abajo en el metood takeDamage()
+@onready var state_machine = $StateMachine
 
 var vida := 10:    #variable para restar vida al prota en la barra de vida, usamos un set-get
 	set(val):
 		vida = val
 		$PlayerGUI/HPProgressBar.value = vida    #ponemos el valor actual al progress var de la vida
+
+#creamos una variable para poder hacer un doble salto
+var numSaltos = 2
 
 func _ready():
 	$PlayerGUI/HPProgressBar.value = vida   #al inicio ponemos el valor de la vida que es 10, vida completa
@@ -43,6 +51,9 @@ func _process(delta):
 	#ponemos en el Label LabelState el estado en el que se
 	#encuentra el Player accediendo al Nodo StateMachine.name
 	$LabelState.text = $StateMachine.state.name
+	#reseteamos la variable numSaltos para que al hacer doble salto pueda volver a saltar
+	if is_on_floor() and numSaltos == 0:
+		numSaltos = 2
 	
 #comentamos el código es el código anterior al crear la MAQUINA DE ESTADOS
 #
@@ -113,23 +124,14 @@ func _process(delta):
 		#frutasLabel.text = str(Global.frutas)
 #
 #
-##funcion llamada desde el enemigo cerdito para dañar al jugador cuando entra en su Area2d llamada DamagePlayer
-#func takeDamage(dmg):
-	#if estadoActual != estados.HERIDO:   #si estamos no estamos HERIDO es decir estamos en estado NORMAL podemos volver a tener el estado HERIDO y se ejecuta el codigo de abajo
-		#$AudioHerirse.play()   #ponemos el audio al ser herido
-		#vida-=dmg  #restamos la vida del prota con el valor del argumento recibidp en la funcion enivada por el enemigo_cerdito
-		#estadoActual = estados.HERIDO  #cambiamos el estado del personaje
-		#anim.play("herido")    #cambiamos la escena(los sprites) al estado Herido
-		#$CooldownTimer.start() #inicializamos el Timer $CooldownTimer al ser herido para que pasado 0.6 segundos vuelva a poner el estado en Normal llamando a la funcion de abajo _on_cooldown_timer_timeout():º 
-		##print(vida)
-		#if vida <=0:
-			#morir()  #llamamos a la funcion morir
-	#
-#func morir():
-	#get_tree().reload_current_scene()  #al ser alcanzado por el cerdito recargamos de nuevo la escena, reiniciamos el juego
-	#
-#
-#
-##señal conectada con el Nodo Timer CooldownTimer
-#func _on_cooldown_timer_timeout():
-	#estadoActual = estados.NORMAL 
+#funcion llamada desde el enemigo cerdito para dañar al jugador cuando entra en su Area2d llamada DamagePlayer
+func takeDamage(dmg):
+	vida-=dmg  #restamos la vida del prota con el valor del argumento recibidp en la funcion enivada por el enemigo_cerdito
+	if vida <=0:
+		morir()  #llamamos a la funcion morir
+	#cambiamos al estado takeDamage gracas a la variable state_machine creada arriba
+	state_machine.transition_to("takeDamage")
+func morir():
+	get_tree().reload_current_scene()  #al ser alcanzado por el cerdito recargamos de nuevo la escena, reiniciamos el juego
+	
+	

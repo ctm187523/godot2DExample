@@ -18,9 +18,16 @@ func state_enter_state(msg := {}):
 	#nos indica que Salto es true
 	#usamos la variable player ya que heredamos de PlayerState en lugar de usar la propiedad owner del Player para referenciar al Player
 	if msg.has("Salto"):
+		#usamos la variable numSaltos del Player para controlar el doble salto que solo sea de 2 saltos
+		player.numSaltos -=1  #restamos un salto de los 2, para el doble salto
+		
 		$"../../AudioSalto".play()  #ponemos el audio para el salto, arrastrandolo aqui
 		anim_player.play("jump") #ponemos la animacion de saltar
-		player.velocity.y -= owner.jump   #modificamos la y, para que salte 
+		player.velocity.y = -player.jump   #modificamos la y, para que salte 
+	
+		#cambiamos la animacion para el doble salto
+		if owner.numSaltos  == 0:
+			anim_player.play("jumpDoble")
 	else:
 		anim_player.play("jumpCaer") #cambiamos la animacion a jumpCaer
 		
@@ -51,3 +58,6 @@ func state_physics_process(delta):
 	#si estamos en el suelo el estado sera Idle
 	if owner.is_on_floor():
 		state_machine.transition_to("Idle")
+	#controlamos que le Player haga el doble salto solo si numSAltos es mayor que 0
+	elif Input.is_action_just_pressed("ui_accept") and owner.numSaltos > 0:
+		state_machine.transition_to("enAire",{Salto = true}) #mismo linea de codigo en en el estado Idle

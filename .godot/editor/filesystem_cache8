@@ -1,12 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729426321
+::res://::1730050496
 export_presets.cfg::TextFile::-1::1728747955::0::1::::<><>::
 fin_de_nivel.gd::GDScript::-1::1728747955::0::1::::<>Area2D<>::
-fin_de_nivel.tscn::PackedScene::2405663039707963998::1729426294::0::1::::<><>::res://fin_de_nivel.gd<>uid://di1m7shyd3pjf::::res://Assets_PixelAdventure/Items/Checkpoints/End/End (Idle).png
+fin_de_nivel.tscn::PackedScene::2405663039707963998::1730050432::0::1::::<><>::res://fin_de_nivel.gd<>uid://di1m7shyd3pjf::::res://Assets_PixelAdventure/Items/Checkpoints/End/End (Idle).png
 Global.gd::GDScript::-1::1728747955::0::1::::<>Node<>::
-global.tscn::PackedScene::305745940732551496::1729426294::0::1::::<><>::res://Global.gd<>uid://di2p4xwb1340l::::res://Assets_PixelAdventure/Sounds/confirmation_002.ogg
+global.tscn::PackedScene::305745940732551496::1730050432::0::1::::<><>::res://Global.gd<>uid://di2p4xwb1340l::::res://Assets_PixelAdventure/Sounds/confirmation_002.ogg
 icon.svg::CompressedTexture2D::6775898557387516117::1728747955::1728747955::1::::<><>::
-playerState.gd::GDScript::-1::1729425363::0::1::::PlayerState<>State<>::
 ::res://addons/::1728747955
 ::res://addons/godot-git-plugin/::1728747955
 git_plugin.gdextension::GDExtension::-1::1728747955::0::1::::<><>::
@@ -349,37 +348,41 @@ Idle.png::CompressedTexture2D::4674446615071954195::1728747955::1728747955::1:::
 ::res://Assets_PixelAdventure/Traps/Trampoline/::1728747955
 Idle.png::CompressedTexture2D::8447082495952128997::1728747955::1728747955::1::::<><>::
 Jump (28x28).png::CompressedTexture2D::7977340877600571288::1728747955::1728747955::1::::<><>::
-::res://Coleccionables/::1729426294
+::res://Coleccionables/::1730050432
 fruta.gd::GDScript::-1::1728747955::0::1::::<>Area2D<>::
-fruta.tscn::PackedScene::7188139291872275046::1729426294::0::1::::<><>::res://Coleccionables/fruta.gd<>uid://gih5ed42qg6a::::res://Assets_PixelAdventure/Items/Fruits/Strawberry.png
-::res://Mapas/::1729426294
+fruta.tscn::PackedScene::7188139291872275046::1730050432::0::1::::<><>::res://Coleccionables/fruta.gd<>uid://gih5ed42qg6a::::res://Assets_PixelAdventure/Items/Fruits/Strawberry.png
+::res://Mapas/::1730050432
 main_menu.gd::GDScript::-1::1728747955::0::1::::<>Node<>::
-main_menu.tscn::PackedScene::2432724475121501627::1729426294::0::1::::<><>::res://Mapas/main_menu.gd<>uid://6kevsfysjxx2::::res://Assets_PixelAdventure/Fonts/NokiaCellphoneFC.ttf<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png
-::res://Personajes/::1729426294
+main_menu.tscn::PackedScene::2432724475121501627::1730050432::0::1::::<><>::res://Mapas/main_menu.gd<>uid://6kevsfysjxx2::::res://Assets_PixelAdventure/Fonts/NokiaCellphoneFC.ttf<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png
+::res://Personajes/::1730050432
 Personajes.gd::GDScript::-1::1728747955::0::1::::Personajes<>CharacterBody2D<>::
-personajes.tscn::PackedScene::8501219594273212620::1729426294::0::1::::<><>::res://Personajes/Personajes.gd
-::res://Personajes/EnemigoCerdito/::1729426294
-enemigo_cerdito.gd::GDScript::-1::1729424752::0::1::::<>Personajes<>::
-enemigo_cerdito.tscn::PackedScene::6857648145599030741::1729426294::0::1::::<><>::uid://dteb3ypchgr8g::::res://Personajes/personajes.tscn<>uid://qh4778c8molj::::res://Assets_PixelAdventure/Enemies/AngryPig/angryPig.png<>res://Personajes/EnemigoCerdito/enemigo_cerdito.gd
-hpGui.tres::StyleBoxFlat::8229307561193043540::1729424752::0::1::::<><>::
-::res://Personajes/MovingPlatform/::1729426294
+personajes.tscn::PackedScene::8501219594273212620::1730050432::0::1::::<><>::res://Personajes/Personajes.gd
+::res://Personajes/EnemigoCerdito/::1730050432
+enemigo_cerdito.gd::GDScript::-1::1730049371::0::1::::<>Personajes<>::
+enemigo_cerdito.tscn::PackedScene::6857648145599030741::1730050432::0::1::::<><>::uid://dteb3ypchgr8g::::res://Personajes/personajes.tscn<>uid://qh4778c8molj::::res://Assets_PixelAdventure/Enemies/AngryPig/angryPig.png<>res://Personajes/EnemigoCerdito/enemigo_cerdito.gd<>uid://brpoi8r032ep3::::res://Trampas/damage_player.tscn
+hpGui.tres::StyleBoxFlat::8229307561193043540::1730042746::0::1::::<><>::
+::res://Personajes/MovingPlatform/::1730050432
 fall_damage.gd::GDScript::-1::1728747955::0::1::::<>Area2D<>::
-fall_damage.tscn::PackedScene::235825715348854138::1729426294::0::1::::<><>::res://Personajes/MovingPlatform/fall_damage.gd
+fall_damage.tscn::PackedScene::235825715348854138::1730050432::0::1::::<><>::res://Personajes/MovingPlatform/fall_damage.gd
 plataforma.gd::GDScript::-1::1728800179::0::1::::<>Path2D<>::
-plataforma.tscn::PackedScene::4313093679135930281::1729426294::0::1::::<><>::res://Personajes/MovingPlatform/plataforma.gd<>uid://i6s3gmq6sfr4::::res://Assets_PixelAdventure/Traps/Platforms/Brown Off.png
-::res://Player/::1729426294
+plataforma.tscn::PackedScene::4313093679135930281::1730050432::0::1::::<><>::res://Personajes/MovingPlatform/plataforma.gd<>uid://i6s3gmq6sfr4::::res://Assets_PixelAdventure/Traps/Platforms/Brown Off.png
+::res://Player/::1730050432
 Camera2D.gd::GDScript::-1::1728747955::0::1::::<>Camera2D<>::
-enAire.gd::GDScript::-1::1729426294::0::1::::<>PlayerState<>::
-GUIText.tres::LabelSettings::1483970730447927791::1729424752::0::1::::<><>::
-Idle.gd::GDScript::-1::1729424476::0::1::::<>State<>::
-Moving.gd::GDScript::-1::1729426088::0::1::::<>State<>::
-player.gd::GDScript::-1::1729421089::0::1::::Player<>CharacterBody2D<>::
-player.tscn::PackedScene::4576862796462751471::1729426294::0::1::::<><>::uid://bei7x67psb4c4::::res://Assets_PixelAdventure/Main Characters/Mask Dude.png<>res://Player/player.gd<>res://Player/StateMachine/stateMachine.gd<>res://Player/Idle.gd<>res://Player/Camera2D.gd<>res://Player/Moving.gd<>uid://ve31s8ekbx6n::::res://Player/GUIText.tres<>res://Player/enAire.gd<>uid://dpilq1fmiu88o::::res://Personajes/EnemigoCerdito/hpGui.tres<>uid://ba2hxqf376lg::::res://Assets_PixelAdventure/Sounds/Jump.ogg<>uid://bk01bmd5p2v58::::res://Assets_PixelAdventure/Sounds/Hit.ogg
-world.tscn::PackedScene::6104374876747941983::1729426294::0::1::::<><>::uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png<>uid://dan8usfesrm7o::::res://Coleccionables/fruta.tscn<>uid://c4x5p0jpe2n4p::::res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn<>uid://bajk6iehee855::::res://fin_de_nivel.tscn
-world_2.tscn::PackedScene::1043586797945611296::1729426294::0::1::::<><>::uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://bajk6iehee855::::res://fin_de_nivel.tscn<>uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://c4mxtkjr4qte7::::res://Assets_PixelAdventure/Parallax/estrellado.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png<>uid://c4x5p0jpe2n4p::::res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn<>uid://b2pka1j7j2yqb::::res://Personajes/MovingPlatform/plataforma.tscn<>uid://dmiarouihq1o::::res://Personajes/MovingPlatform/fall_damage.tscn<>uid://clv45g6ija3wa::::res://Trampas/sierra.tscn
-::res://Player/StateMachine/::1729420677
-state.gd::GDScript::-1::1729420677::0::1::::State<>Node<>::
-stateMachine.gd::GDScript::-1::1729410510::0::1::::StateMachine<>Node<>::
-::res://Trampas/::1729426294
-sierra.gd::GDScript::-1::1728798596::0::1::::<>Node2D<>::
-sierra.tscn::PackedScene::5590085310251769260::1729426294::0::1::::<><>::res://Trampas/sierra.gd<>uid://5yqlida7hamy::::res://Assets_PixelAdventure/Traps/Saw/Off.png
+enAire.gd::GDScript::-1::1730045390::0::1::::<>PlayerState<>::
+GUIText.tres::LabelSettings::1483970730447927791::1730042746::0::1::::<><>::
+Idle.gd::GDScript::-1::1730044577::0::1::::<>State<>::
+Moving.gd::GDScript::-1::1729427164::0::1::::<>State<>::
+player.gd::GDScript::-1::1730047449::0::1::::Player<>CharacterBody2D<>::
+player.tscn::PackedScene::4576862796462751471::1730050431::0::1::::<><>::uid://bei7x67psb4c4::::res://Assets_PixelAdventure/Main Characters/Mask Dude.png<>res://Player/player.gd<>res://Player/StateMachine/stateMachine.gd<>res://Player/Idle.gd<>res://Player/Camera2D.gd<>res://Player/Moving.gd<>uid://ve31s8ekbx6n::::res://Player/GUIText.tres<>res://Player/enAire.gd<>uid://dpilq1fmiu88o::::res://Personajes/EnemigoCerdito/hpGui.tres<>uid://ba2hxqf376lg::::res://Assets_PixelAdventure/Sounds/Jump.ogg<>res://Player/takeDamage.gd<>uid://bk01bmd5p2v58::::res://Assets_PixelAdventure/Sounds/Hit.ogg
+takeDamage.gd::GDScript::-1::1730050432::0::1::::<>PlayerState<>::
+world.tscn::PackedScene::6104374876747941983::1730050432::0::1::::<><>::uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png<>uid://dan8usfesrm7o::::res://Coleccionables/fruta.tscn<>uid://c4x5p0jpe2n4p::::res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn<>uid://bajk6iehee855::::res://fin_de_nivel.tscn
+world_2.tscn::PackedScene::1043586797945611296::1730050432::0::1::::<><>::uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://bajk6iehee855::::res://fin_de_nivel.tscn<>uid://b6hci5m0bb7m6::::res://Player/player.tscn<>uid://c4mxtkjr4qte7::::res://Assets_PixelAdventure/Parallax/estrellado.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png<>uid://c4x5p0jpe2n4p::::res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn<>uid://b2pka1j7j2yqb::::res://Personajes/MovingPlatform/plataforma.tscn<>uid://dmiarouihq1o::::res://Personajes/MovingPlatform/fall_damage.tscn<>uid://clv45g6ija3wa::::res://Trampas/sierra.tscn
+::res://Player/StateMachine/::1730046184
+playerState.gd::GDScript::-1::1729425363::0::1::::PlayerState<>State<>::
+state.gd::GDScript::-1::1730043966::0::1::::State<>Node<>::
+stateMachine.gd::GDScript::-1::1730042746::0::1::::StateMachine<>Node<>::
+::res://Trampas/::1730050432
+damage_player.gd::GDScript::-1::1730049371::0::1::::<>Area2D<>::
+damage_player.tscn::PackedScene::3611462776807117090::1730050432::0::1::::<><>::res://Trampas/damage_player.gd
+sierra.gd::GDScript::-1::1730049371::0::1::::<>Node2D<>::
+sierra.tscn::PackedScene::5590085310251769260::1730050432::0::1::::<><>::res://Trampas/sierra.gd<>uid://5yqlida7hamy::::res://Assets_PixelAdventure/Traps/Saw/Off.png<>uid://brpoi8r032ep3::::res://Trampas/damage_player.tscn
