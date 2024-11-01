@@ -1,7 +1,12 @@
 extends Personajes       #heredamos de la clase Personajes
 
+#creamos un set-get para manejar la direccion
+var direccion = -1:  #empieza caminado a la izquierda
+	set(value):
+		if value != direccion:
+			darseVuelta()
+		direccion = value
 
-var direccion = -1  #empieza caminado a la izquierda
 
 #inicializamos Nodos
 @onready var raysuelo : RayCast2D = $RayCasts/RayCastSuelo
@@ -19,14 +24,16 @@ var canChangeDirection = true   #flag para manejaar el cambio de direccion pasad
 enum estados {ANGRY,PATRULLAR,MORIRSE}
 
 #creamos un set-get para manejar la variable estadoActual
-var estadoActual = estados.PATRULLAR:
-	set(value):
-		estadoActual = value
-		match value:
-			estados.ANGRY:
-				anim.play("runAngry")
-			estados.PATRULLAR:
-				anim.play("walk")
+#var estadoActual = estados.PATRULLAR:
+	#set(value):
+		#estadoActual = value
+		#match value:
+			#estados.ANGRY:
+				#anim.play("runAngry")
+			#estados.PATRULLAR:
+				#anim.play("walk")
+				
+var estadoActual = estados.PATRULLAR
 
 #funciones
 #funcion que se ejecuta la incio
@@ -63,10 +70,10 @@ func _process(delta):
 		anim.play("runAngry")   #cambiamos el sprite al sprite del cerdito enfadado
 		var directionPlayer = global_position.direction_to((player.global_position))
 		if directionPlayer.x <0:    #si es menor que cero va el cerdito a la izquierda, cambiamos la direccion
-			darseVuelta()
+			#darseVuelta()
 			direccion=-1
 		elif  directionPlayer.x > 0:
-			darseVuelta()
+			#darseVuelta()
 			direccion = 1			#si es mayor que cero va el cerdito a la derecha, cambiamos la direccion
 		$Sprite2D.flip_h = true if direccion == 1 else false   #cambiamos la direccion cuando al cumplirse la condiciones y entrar en el if cambiamos el valor de la dirección y entonces se voltea la imagen horizontalmente
 
@@ -80,7 +87,7 @@ func _process(delta):
 		#cambia de sentido en la x, ver en el inspector de RayCast y cambiar la escala 
 		# a 1 y -1 para ver como cambia el sentido de las flechas del Raycast
 		if canChangeDirection and  (rayMuro.is_colliding() or !raysuelo.is_colliding()):
-			darseVuelta()  #llamamos a la funcion creada abajo para al cambiar el estado cambie sus variables relacionadas con el movimiento del cerdito y raycast
+			#darseVuelta()  #llamamos a la funcion creada abajo para al cambiar el estado cambie sus variables relacionadas con el movimiento del cerdito y raycast
 			direccion *= -1
 		$Sprite2D.flip_h = true if direccion == 1 else false #cambiamos la direccion cuando al cumplirse la condiciones y entrar en el if cambiamos el valor de la dirección y entonces se voltea la imagen horizontalmente
 
@@ -116,5 +123,5 @@ func darseVuelta():
 #cambiamos el estado del cerdito para que al hacernos daño cambie de direccion
 func _on_damage_player_mehanhechodanio():
 	estadoActual = estados.PATRULLAR
-	darseVuelta() #llamamos a la funcion de arriba para que al cambiar el estado se de la vuelta el cerdito y cambie las variables relacionadas
+	#darseVuelta() #llamamos a la funcion de arriba para que al cambiar el estado se de la vuelta el cerdito y cambie las variables relacionadas
 	direccion *= -1
