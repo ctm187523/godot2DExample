@@ -2,9 +2,6 @@ res://Player/player.tscn
 res://Personajes/EnemigoCerdito/enemigo_cerdito.gd
 res://Player/GUIText.tres
 res://Personajes/EnemigoCerdito/hpGui.tres
-res://Player/Idle.gd
-res://Player/player.gd
-res://Player/takeDamage.gd
 res://Player/world.tscn
 res://Coleccionables/fruta.tscn
 res://global.tscn
@@ -17,4 +14,5 @@ res://Personajes/MovingPlatform/plataforma.tscn
 res://Personajes/MovingPlatform/fall_damage.tscn
 res://Trampas/sierra.tscn
 res://Trampas/damage_player.tscn
-res://Player/enAire.gd
+res://Player/player.gd
+res://Trampas/damage_player.gd

@@ -52,9 +52,18 @@ func _process(delta):
 	#encuentra el Player accediendo al Nodo StateMachine.name
 	$LabelState.text = $StateMachine.state.name
 	#reseteamos la variable numSaltos para que al hacer doble salto pueda volver a saltar
-	if is_on_floor() and numSaltos == 0:
+	if is_on_floor() and numSaltos != 2 and state_machine.state.name != "enAire":
 		numSaltos = 2
-	
+	#a cada frame recorremos con un for todos los hijos del grupo de raycast
+	#RaycastDamage, los obtenemos y comprobamos si tienen colision
+	for ray in rasycastDamage.get_children():
+		if ray.is_colliding():
+			var colision = ray.get_collider() #en la variable colision obtenemos con quien ha colisionado los raycast
+			if colision.is_in_group("Enemigos"):    #comprobamos si lo colisionado pertenece al grupo nemigos
+				if colision.has_method("takeDamage"):  #comprobamos si tiene el metodo takeDamage
+					colision.takeDamage(damage)   #llamamos al método takeDamage, #le pasamos el valor de la variable  damage inicializada arriba para dañar al cerdito
+					
+					
 #comentamos el código es el código anterior al crear la MAQUINA DE ESTADOS
 #
 #func _physics_process(delta):
@@ -106,22 +115,10 @@ func _process(delta):
 	## rather than stop immediately. If the other body is a CharacterBody2D or RigidBody2D, it will also be affected by the motion of the other body. 
 	## You can use this to make moving and rotating platforms, or to make nodes push other nodes.
 	#move_and_slide()    #metodo ya implementado de Godot
-	#
-#
-#func _process(delta):
-	#
-	##a cada frame recorremos con un for todos los hijos del grupo de raycast
-	##RaycastDamage, los obtenemos y comprobamos si tienen colision
-	#for ray in rasycastDamage.get_children():
-		#if ray.is_colliding():
-			#var colision = ray.get_collider() #en la variable colision obtenemos con quien ha colisionado los raycast
-			#if colision.is_in_group("Enemigos"):    #comprobamos si lo colisionado pertenece al grupo nemigos
-				#if colision.has_method("takeDamage"):  #comprobamos si tiene el metodo takeDamage
-					#colision.takeDamage(damage)   #llamamos al método takeDamage, #le pasamos el valor de la variable  damage inicializada arriba para dañar al cerdito
-	#
-	##metodo llamado por la escene global
-#func actualizaInterfazFrutas():    
-		#frutasLabel.text = str(Global.frutas)
+	
+#metodo llamado por la escene global
+func actualizaInterfazFrutas():    
+		frutasLabel.text = str(Global.frutas)
 #
 #
 #funcion llamada desde el enemigo cerdito para dañar al jugador cuando entra en su Area2d llamada DamagePlayer

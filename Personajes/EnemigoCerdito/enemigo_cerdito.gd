@@ -17,7 +17,16 @@ var canChangeDirection = true   #flag para manejaar el cambio de direccion pasad
 
 #usamos un enum para definir los estados del cerdito(máquina de estados)
 enum estados {ANGRY,PATRULLAR,MORIRSE}
-var estadoActual = estados.PATRULLAR
+
+#creamos un set-get para manejar la variable estadoActual
+var estadoActual = estados.PATRULLAR:
+	set(value):
+		estadoActual = value
+		match value:
+			estados.ANGRY:
+				anim.play("runAngry")
+			estados.PATRULLAR:
+				anim.play("walk")
 
 #funciones
 #funcion que se ejecuta la incio
@@ -54,8 +63,10 @@ func _process(delta):
 		anim.play("runAngry")   #cambiamos el sprite al sprite del cerdito enfadado
 		var directionPlayer = global_position.direction_to((player.global_position))
 		if directionPlayer.x <0:    #si es menor que cero va el cerdito a la izquierda, cambiamos la direccion
+			darseVuelta()
 			direccion=-1
 		elif  directionPlayer.x > 0:
+			darseVuelta()
 			direccion = 1			#si es mayor que cero va el cerdito a la derecha, cambiamos la direccion
 		$Sprite2D.flip_h = true if direccion == 1 else false   #cambiamos la direccion cuando al cumplirse la condiciones y entrar en el if cambiamos el valor de la dirección y entonces se voltea la imagen horizontalmente
 
@@ -69,10 +80,8 @@ func _process(delta):
 		#cambia de sentido en la x, ver en el inspector de RayCast y cambiar la escala 
 		# a 1 y -1 para ver como cambia el sentido de las flechas del Raycast
 		if canChangeDirection and  (rayMuro.is_colliding() or !raysuelo.is_colliding()):
-			canChangeDirection = false  #si cambia de direccion ponemos la variable canChangeDirection en false
-			$RayCasts/RayTimer.start()  #inciamos el Timer, al acabar el Timer llama a la funcion conectada de abajo _on_ray_timer_timeout 
+			darseVuelta()  #llamamos a la funcion creada abajo para al cambiar el estado cambie sus variables relacionadas con el movimiento del cerdito y raycast
 			direccion *= -1
-			rayos.scale.x *= -1
 		$Sprite2D.flip_h = true if direccion == 1 else false #cambiamos la direccion cuando al cumplirse la condiciones y entrar en el if cambiamos el valor de la dirección y entonces se voltea la imagen horizontalmente
 
 
@@ -94,4 +103,18 @@ func _on_ray_timer_timeout():
 	canChangeDirection = true  #volvemos a poner en true la variable para que si colisiona cambie de direccion ya pasado un tiempo
 	pass # Replace with function body.
 
+#funcion para actualizar los valores del cerdito
+#la direccion, el raycast etc
+func darseVuelta():
+	canChangeDirection = false  #si cambia de direccion ponemos la variable canChangeDirection en false
+	$RayCasts/RayTimer.start()  #inciamos el Timer, al acabar el Timer llama a la funcion conectada de abajo _on_ray_timer_timeout 
+	rayos.scale.x *= -1
+	rayCastPlayer.scale.x *= -1 #cambiamos la direccion del raycast
 
+#señal conectado desde el nodo que esta al final damage_player
+#esta señal ha sido generada en la escena damage_player
+#cambiamos el estado del cerdito para que al hacernos daño cambie de direccion
+func _on_damage_player_mehanhechodanio():
+	estadoActual = estados.PATRULLAR
+	darseVuelta() #llamamos a la funcion de arriba para que al cambiar el estado se de la vuelta el cerdito y cambie las variables relacionadas
+	direccion *= -1

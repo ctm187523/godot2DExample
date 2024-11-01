@@ -41,3 +41,4 @@ target_position = Vector2(-50, 0)
 [node name="DamagePlayer" parent="." index="5" instance=ExtResource("4_omoum")]
 
 [connection signal="timeout" from="RayCasts/RayTimer" to="." method="_on_ray_timer_timeout"]
+[connection signal="mehanhechodanio" from="DamagePlayer" to="." method="_on_damage_player_mehanhechodanio"]
