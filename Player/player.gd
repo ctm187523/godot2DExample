@@ -53,7 +53,7 @@ func _process(delta):
 	$LabelState.text = $StateMachine.state.name
 	#reseteamos la variable numSaltos para que al hacer doble salto pueda volver a saltar
 	if is_on_floor() and numSaltos != 2 and state_machine.state.name != "enAire":
-		numSaltos = 2
+		reiniciasalto()  #llamamos a la funcion de abajo
 	#a cada frame recorremos con un for todos los hijos del grupo de raycast
 	#RaycastDamage, los obtenemos y comprobamos si tienen colision
 	for ray in rasycastDamage.get_children():
@@ -62,7 +62,9 @@ func _process(delta):
 			if colision.is_in_group("Enemigos"):    #comprobamos si lo colisionado pertenece al grupo nemigos
 				if colision.has_method("takeDamage"):  #comprobamos si tiene el metodo takeDamage
 					colision.takeDamage(damage)   #llamamos al método takeDamage, #le pasamos el valor de la variable  damage inicializada arriba para dañar al cerdito
-					
+
+func reiniciasalto():
+	numSaltos = 2					
 					
 #comentamos el código es el código anterior al crear la MAQUINA DE ESTADOS
 #

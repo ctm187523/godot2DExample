@@ -14,5 +14,5 @@ res://Personajes/MovingPlatform/plataforma.tscn
 res://Personajes/MovingPlatform/fall_damage.tscn
 res://Trampas/sierra.tscn
 res://Trampas/damage_player.tscn
+res://Player/enAire.gd
 res://Player/player.gd
-res://Trampas/damage_player.gd
